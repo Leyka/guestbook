@@ -1,8 +1,9 @@
-export interface Comment {
-  name: string;
-  message: string;
+export interface Message {
+  first_name: string;
+  last_name: string;
+  comment: string;
 }
 
 export interface GuestBookStore {
-  comments: Comment[];
+  messages: Message[];
 }

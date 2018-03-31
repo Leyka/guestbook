@@ -17,7 +17,6 @@ export class InputField extends React.PureComponent<InputFieldProps> {
     return(
       <Input
         {...input}
-        {...meta}
         {...rest}
       />
     );
