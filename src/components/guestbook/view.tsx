@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Row, Col } from 'antd';
 import { GuestBookForm } from './form';
 import { GuestBookComments } from './comments';
-import './view.css';
+import './styles/view.scss';
 
 export interface GuestBokViewProps {}
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { GuestBookContainer } from './components/guestbook';
-import { Layout } from 'antd';
-import './App.css';
+import { Layout, Icon } from 'antd';
+import './App.scss';
 
 const { Header, Content, Footer } = Layout;
 
@@ -11,7 +11,8 @@ export class App extends React.Component {
       <div className="App">
         <Layout>
           <Header className="logo">
-            GuestBook
+            <Icon type="book"  />
+            <span>GuestBook</span>
           </Header>
           <Content className="content">
             <GuestBookContainer />
