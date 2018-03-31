@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GuestBookView } from './view';
+import { GuestBookView } from './components/view';
 
 export class GuestBookContainer extends React.PureComponent {
 

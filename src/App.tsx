@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GuestBookContainer } from './components/guestbook';
+import { GuestBookContainer } from './pages/Guestbook';
 import { Layout, Icon } from 'antd';
 import './App.scss';
 
