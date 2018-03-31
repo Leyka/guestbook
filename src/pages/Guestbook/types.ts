@@ -1,9 +1,12 @@
 export interface Message {
-  first_name: string;
-  last_name: string;
-  comment: string;
+  name: string;
+  content: string;
 }
 
-export interface GuestBookStore {
+export interface GuestBookState {
+  messages: Message[];
+}
+
+export interface GuestBookProps {
   messages: Message[];
 }

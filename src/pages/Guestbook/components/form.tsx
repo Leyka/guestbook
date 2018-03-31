@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Form, Field, reduxForm, InjectedFormProps } from 'redux-form';
-import { InputField } from '../../../components/input-field'; // <== TODO: Fix path
+import { Form, Button, Icon } from 'antd';
+import { Field, reduxForm, InjectedFormProps } from 'redux-form';
+import { InputField, TextAreaField } from '../../../common/fields/'; // <== TODO: Fix path
+import '../styles/form.scss';
 
 export type GuestBookFormProps = InjectedFormProps<{}, {}>;
 
@@ -8,14 +10,21 @@ export class GuestBookFormBase extends React.PureComponent<GuestBookFormProps> {
   render() {
     return (
       <Form>
-          <Field
-            name="first_name"
-            component={InputField}
-          />
-          <Field
-            name="last_name"
-            component={InputField}
-          />
+        <h2>Leave us a feedback <Icon type="heart-o"/></h2>
+        <Field
+          name="name"
+          component={InputField}
+          placeholder="Your Name"
+        />
+        <Field
+          name="last_name"
+          component={TextAreaField}
+          placeholder="Type your comment here"
+          className="comment"
+        />
+        <Button size="large" type="primary">
+          Send
+        </Button>
       </Form>
     );
   }

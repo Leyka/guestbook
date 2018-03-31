@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { Row, Col } from 'antd';
+import { GuestBookProps } from '../types';
 import { GuestBookForm } from './form';
-import { GuestBookComments } from './comments';
+import { GuestBookMessages } from './messages';
+
 import '../styles/view.scss';
 
-export interface GuestBokViewProps {}
-
-export class GuestBookView extends React.PureComponent<GuestBokViewProps> {
+export class GuestBookView extends React.PureComponent<GuestBookProps> {
   render() {
     return (
       <Row className="root">
-        <Col span={16}>
-          <GuestBookComments />
-        </Col>
-        <Col span={8}>
+        <Col span={10}>
           <GuestBookForm />
+        </Col>
+        <Col span={14}>
+          <GuestBookMessages {...this.props}/>
         </Col>
       </Row>
     );
