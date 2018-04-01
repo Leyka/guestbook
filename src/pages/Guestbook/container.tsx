@@ -11,9 +11,10 @@ export class GuestBook extends React.PureComponent<GuestBookProps> {
   }
 }
 
-function mapStateToProps(state: GuestBookState): Partial<GuestBookProps> {
+function mapStateToProps(state): Partial<GuestBookProps> {
+  const stateGuestBook : GuestBookState = state.guestbook;
   return {
-    messages: state.messages
+    messages: stateGuestBook.messages
   };
 }
 

@@ -1,4 +1,5 @@
 export interface Message {
+  id: string;
   name: string;
   content: string;
 }
@@ -9,4 +10,5 @@ export interface GuestBookState {
 
 export interface GuestBookProps {
   messages: Message[];
+  sendMessage: (values) => void;
 }

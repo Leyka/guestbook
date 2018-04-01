@@ -1,15 +1,20 @@
 import * as React from 'react';
-import { Form, Button, Icon } from 'antd';
-import { Field, reduxForm, InjectedFormProps } from 'redux-form';
+import { Button, Icon } from 'antd';
+import { Form, Field, reduxForm, InjectedFormProps } from 'redux-form';
 import { InputField, TextAreaField } from '../../../common/fields/'; // <== TODO: Fix path
+import { GuestBookProps } from '../types';
 import '../styles/form.scss';
 
-export type GuestBookFormProps = InjectedFormProps<{}, {}>;
+export type GuestBookFormProps = GuestBookProps & InjectedFormProps<{}, GuestBookProps>;
 
 export class GuestBookFormBase extends React.PureComponent<GuestBookFormProps> {
   render() {
+    const {
+      sendMessage
+    } = this.props;
+
     return (
-      <Form>
+      <Form onSubmit={sendMessage}>
         <h2>Leave us a feedback <Icon type="heart-o"/></h2>
         <Field
           name="name"
@@ -17,12 +22,12 @@ export class GuestBookFormBase extends React.PureComponent<GuestBookFormProps> {
           placeholder="Your Name"
         />
         <Field
-          name="last_name"
+          name="content"
           component={TextAreaField}
           placeholder="Type your comment here"
           className="comment"
         />
-        <Button size="large" type="primary">
+        <Button size="large" type="primary" htmlType="submit">
           Send
         </Button>
       </Form>

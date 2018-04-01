@@ -21,7 +21,7 @@ export class GuestBookMessages extends React.PureComponent<GuestBookProps> {
 
 function toCard (message: Message) {
   return (
-    <Card title={message.name}>
+    <Card key={message.id} title={message.name} className="card">
       {message.content}
     </Card>
   );
