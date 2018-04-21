@@ -6,10 +6,7 @@ import { WrappedFieldProps } from 'redux-form';
  * to be used in <Field> component provided by Redux-form library
  */
 export function wrapForReduxField<P>(Component: new(...args: any[]) => React.Component<P>) {
-
-  type AllProps = P & WrappedFieldProps;
-
-  return (props: AllProps) => {
+  return (props: P & WrappedFieldProps) => {
     return (
       <Component
         {...props.input}
